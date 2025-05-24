@@ -1,5 +1,5 @@
-/*import { CreateAssistantDTO } from "@vapi-ai/web/dist/api";
-import { z } from "zod";*/
+import { CreateAssistantDTO } from "@vapi-ai/web/dist/api";
+import { z } from "zod";
 
 export const mappings = {
   "react.js": "react",
@@ -97,10 +97,9 @@ export const mappings = {
   "aws amplify": "amplify",
 };
 
-/*export const interviewer: CreateAssistantDTO = {
+export const interviewer: CreateAssistantDTO = {
   name: "Interviewer",
-  firstMessage:
-    "Hello! Thank you for taking the time to speak with me today. I'm excited to learn more about you and your experience.",
+  firstMessage: "Hello! Thank you for taking the time to speak with me today. I'm excited to learn more about you and your experience.",
   transcriber: {
     provider: "deepgram",
     model: "nova-2",
@@ -153,6 +152,8 @@ End the conversation on a polite and positive note.
       },
     ],
   },
+  clientMessages: [],
+  serverMessages: []
 };
 
 export const feedbackSchema = z.object({
@@ -187,7 +188,7 @@ export const feedbackSchema = z.object({
   strengths: z.array(z.string()),
   areasForImprovement: z.array(z.string()),
   finalAssessment: z.string(),
-});*/
+});
 
 export const interviewCovers = [
   "/adobe.png",
