@@ -157,7 +157,7 @@ async function Home() {
             </div>
           </Link>
 
-          <Link href="/resources" className="group bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-purple-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <Link href="https://www.interviewbit.com/technical-interview-questions/" className="group bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-purple-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-purple-500/30 rounded-xl flex items-center justify-center group-hover:bg-purple-500/40 transition-colors">
                 <span className="text-2xl">📚</span>
