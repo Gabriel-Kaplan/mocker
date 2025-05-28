@@ -23,7 +23,7 @@
 
   --font-mona-sans: "Mona Sans", sans-serif;
 
-  --bg-pattern: url("/pattern.png");
+  --bg-pattern: url("/pattern2.png");
 }
 
 :root {
@@ -62,7 +62,7 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: black;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -302,7 +302,7 @@
 }
 
 @utility pattern {
-  @apply bg-[url('/pattern.png')] bg-top bg-no-repeat;
+  @apply bg-[url('/pattern2.png')] bg-cover bg-no-repeat;
 }
 
 @utility blue-gradient-dark {
@@ -320,6 +320,7 @@
 @utility animate-fadeIn {
   animation: fadeIn 0.3s ease-in-out;
 }
+
 
 @keyframes fadeIn {
   from {
