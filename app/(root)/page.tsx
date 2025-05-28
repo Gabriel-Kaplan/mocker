@@ -54,9 +54,6 @@ async function Home() {
               <Button asChild className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 font-bold px-10 py-4 rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 text-lg">
                 <Link href="/interview">Start Practice Interview</Link>
               </Button>
-              <Button variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 text-lg">
-                <Link href="/learn">Learn More</Link>
-              </Button>
             </div>
           </div>
         </div>
@@ -68,7 +65,7 @@ async function Home() {
       </section>
 
       {/* Quick Stats Dashboard */}
-      <section className="bg-zinc-900 rounded-3xl p-8 mb-8">
+      <section id="dashboard" className="bg-zinc-900 rounded-3xl p-8 mb-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
             <span className="text-xl">📊</span>
@@ -85,7 +82,7 @@ async function Home() {
               <span className="text-sm font-medium text-white/70 bg-white/10 px-3 py-1 rounded-full">Total</span>
             </div>
             <h3 className="text-2xl font-bold text-white mb-1">{totalInterviews}</h3>
-            <p className="text-white/70 text-sm">Interviews Completed</p>
+            <p className="text-white/70 text-sm">Interviews You Completed</p>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
@@ -107,7 +104,7 @@ async function Home() {
               <span className="text-sm font-medium text-purple-300 bg-purple-500/20 px-3 py-1 rounded-full">Available</span>
             </div>
             <h3 className="text-2xl font-bold text-white mb-1">{allInterview?.length || 0}</h3>
-            <p className="text-white/70 text-sm">New Opportunities</p>
+            <p className="text-white/70 text-sm">Community Made Interviews</p>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
@@ -140,7 +137,7 @@ async function Home() {
               </div>
               <div>
                 <h3 className="font-semibold text-white group-hover:text-indigo-300 transition-colors">New Interview</h3>
-                <p className="text-sm text-white/70">Start practicing now</p>
+                <p className="text-sm text-white/70"></p>
               </div>
             </div>
           </Link>
@@ -201,9 +198,9 @@ async function Home() {
             <div className="relative">
               <div className="absolute -inset-4 bg-white/10 rounded-full blur-xl"></div>
               <Image
-                src="/robothand.png"
+                src="/rocket5.png"
                 alt="AI Interview Assistant"
-                width={580}
+                width={380}
                 height={280}
                 className="relative z-10 max-sm:w-48 max-sm:h-48 drop-shadow-2xl"
               />
@@ -221,11 +218,10 @@ async function Home() {
             </div>
             <h2 className="text-2xl font-bold text-white">Your Interview History</h2>
           </div>
-          {hasPastInterviews && (
             <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-xl transition-all duration-300">
-              <Link href="/history">View All History</Link>
+              <Link href="/allInterviews">View All History</Link>
             </Button>
-          )}
+          
         </div>
 
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden">
@@ -245,7 +241,7 @@ async function Home() {
               {userInterviews?.length! > 3 && (
                 <div className="text-center pt-4 border-t border-white/20">
                   <Button variant="ghost" className="text-blue-300 hover:text-blue-200 hover:bg-white/10 rounded-xl">
-                    <Link href="/history">Show {userInterviews?.length! - 3} more interviews</Link>
+                    <Link href="/allInterviews">Show {userInterviews?.length! - 3} more interviews</Link>
                   </Button>
                 </div>
               )}
@@ -367,17 +363,17 @@ async function Home() {
                 </Link>
               </li>
               <li>
-                <Link href="/history" className="text-white/70 hover:text-white transition-colors text-sm">
+                <Link href="#dashboard" className="text-white/70 hover:text-white transition-colors text-sm">
                   Interview History
                 </Link>
               </li>
               <li>
-                <Link href="/progress" className="text-white/70 hover:text-white transition-colors text-sm">
+                <Link href="#dashboard" className="text-white/70 hover:text-white transition-colors text-sm">
                   Progress Tracking
                 </Link>
               </li>
               <li>
-                <Link href="/browse" className="text-white/70 hover:text-white transition-colors text-sm">
+                <Link href="/allInterviews" className="text-white/70 hover:text-white transition-colors text-sm">
                   Browse Interviews
                 </Link>
               </li>
@@ -404,8 +400,8 @@ async function Home() {
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-white/70 hover:text-white transition-colors text-sm">
-                  FAQ
+                <Link href="/FAQS" className="text-white/70 hover:text-white transition-colors text-sm">
+                  FAQs
                 </Link>
               </li>
             </ul>

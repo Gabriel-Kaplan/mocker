@@ -61,6 +61,10 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .dark {
   --background: black;
   --foreground: oklch(0.985 0 0);
