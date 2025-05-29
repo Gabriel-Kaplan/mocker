@@ -292,7 +292,7 @@ async function Home() {
               {allInterview?.length! > 4 && (
                 <div className="text-center pt-4 border-t border-white/20">
                   <Button variant="ghost" className="text-emerald-300 hover:text-emerald-200 hover:bg-white/10 rounded-xl">
-                    <Link href="/browse">Show {allInterview?.length! - 4} more opportunities</Link>
+                    <Link href="/allInterviews">Show {allInterview?.length! - 4} more opportunities</Link>
                   </Button>
                 </div>
               )}
