@@ -190,7 +190,7 @@ async function Home() {
                   <Link href="/interview">Quick Start</Link>
                 </Button>
                 <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-xl px-8 py-3">
-                  <Link href="/browse">Browse All</Link>
+                  <Link href="/allInterviews">Browse All</Link>
                 </Button>
               </div>
             </div>
@@ -270,11 +270,9 @@ async function Home() {
             </div>
             <h2 className="text-2xl font-bold text-white">Available Practice Interviews</h2>
           </div>
-          {hasUpcomingInterviews && (
             <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-xl transition-all duration-300">
               <Link href="/browse">Browse All</Link>
             </Button>
-          )}
         </div>
 
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden">
