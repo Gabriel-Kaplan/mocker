@@ -271,7 +271,7 @@ async function Home() {
             <h2 className="text-2xl font-bold text-white">Available Practice Interviews</h2>
           </div>
             <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm rounded-xl transition-all duration-300">
-              <Link href="/browse">Browse All</Link>
+              <Link href="/allInterviews">Browse All</Link>
             </Button>
         </div>
 
