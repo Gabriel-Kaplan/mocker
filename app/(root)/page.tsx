@@ -9,7 +9,7 @@ import { getCurrentUser } from "@/lib/actions/auth.action";
 import {
   getInterviewsByUserId,
   getLatestInterviews,
-} from "@/lib/actions/general.action";
+} from "@/lib/actions/general.action"; 
 
 async function Home() {
   const user = await getCurrentUser();

@@ -203,9 +203,13 @@ html {
       @apply !text-light-100 !font-normal;
     }
 
-    .input {
-      @apply !bg-dark-200 !rounded-full !min-h-12 !px-5 placeholder:!text-light-100;
-    }
+   .input {
+    @apply !bg-dark-200 !rounded-full !min-h-12 !px-5 placeholder:!text-light-100;
+  }
+
+  .input:not(:placeholder-shown) {
+    @apply !bg-dark-300;
+  }
 
     /* Modern 2025 Glassmorphic Button */
     .btn {
@@ -421,7 +425,7 @@ html {
 }
 
 @utility dark-gradient {
-  @apply bg-gradient-to-b from-[#050925] to-[#090723];
+  @apply bg-gradient-to-b from-[#000000] to-[#090723];
 }
 
 @utility border-gradient {
