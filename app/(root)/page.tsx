@@ -63,6 +63,29 @@ async function Home() {
         <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 right-20 w-16 h-16 bg-blue-500/20 rounded-full blur-xl animate-pulse delay-500"></div>
       </section>
+ {/* Maintenance Disclaimer */}
+      <section className="bg-gradient-to-r from-amber-900/20 to-orange-900/20 rounded-2xl p-6 mb-8 border border-amber-500/30">
+        <div className="flex items-start gap-4 max-sm:flex-col max-sm:text-center">
+          <div className="flex-shrink-0">
+            <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center">
+              <span className="text-2xl">🚧</span>
+            </div>
+          </div>
+          <div className="flex-1">
+            <h3 className="text-lg font-semibold text-amber-200 mb-2">
+              Maintenance Notice
+            </h3>
+            <p className="text-amber-100/90 leading-relaxed">
+              We&apos;re currently performing system maintenance to improve your interview experience. 
+              Mock interview generation is temporarily unavailable. We apologize for any inconvenience 
+              and appreciate your patience as we work to enhance our platform.
+            </p>
+            <div className="mt-3 text-sm text-amber-200/80">
+              <strong>Note:</strong> You can still view your interview history and browse available practice sessions.
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Quick Stats Dashboard */}
       <section id="dashboard" className="bg-zinc-900 rounded-3xl p-8 mb-8">

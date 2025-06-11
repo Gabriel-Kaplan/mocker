@@ -2,6 +2,9 @@
 import React from 'react'
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { ArrowLeft } from "lucide-react";
 
 import Agent from "@/components/Agent";
 import { getRandomInterviewCover } from "@/lib/utils";
@@ -28,8 +31,20 @@ const InterviewDetails = async ({ params }: RouteParams) => {
 
   return (
     <>
-      <div className="flex flex-row gap-4 justify-between">
-        <div className="flex flex-row gap-4 items-center max-sm:flex-col">
+      {/* Back button - separate from main content */}
+      <div className="mb-4">
+        <Button variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 rounded-xl p-2">
+          <Link href="/" className="flex items-center gap-2">
+            <ArrowLeft className="w-4 h-4" />
+            <span className="hidden sm:inline">Back to Dashboard</span>
+            <span className="sm:hidden">Back</span>
+          </Link>
+        </Button>
+      </div>
+
+      {/* Main header content */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-between mb-6">
+        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
           <div className="flex flex-row gap-4 items-center">
             <Image
               src={getRandomInterviewCover()}
@@ -44,9 +59,11 @@ const InterviewDetails = async ({ params }: RouteParams) => {
           <DisplayTechIcons techStack={interview.techstack} />
         </div>
 
-        <p className="bg-dark-200 px-4 py-2 rounded-lg h-fit">
-          {interview.type}
-        </p>
+        <div className="self-start sm:self-auto">
+          <p className="bg-dark-200 px-4 py-2 rounded-lg h-fit">
+            {interview.type}
+          </p>
+        </div>
       </div>
 
       <Agent

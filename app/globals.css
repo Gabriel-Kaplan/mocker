@@ -207,8 +207,131 @@ html {
       @apply !bg-dark-200 !rounded-full !min-h-12 !px-5 placeholder:!text-light-100;
     }
 
+    /* Modern 2025 Glassmorphic Button */
     .btn {
-      @apply !w-full !bg-primary-200 !text-dark-100 hover:!bg-primary-200/80 !rounded-full !min-h-10 !font-bold !px-5 cursor-pointer;
+      @apply !w-full !min-h-12 !font-semibold !px-6 !py-3 cursor-pointer !rounded-2xl relative overflow-hidden;
+      
+      /* Remove default backgrounds */
+      background: none !important;
+      
+      /* Modern glassmorphic background with your color system */
+      background: linear-gradient(135deg, 
+          rgba(202, 197, 254, 0.15),  /* primary-200 with transparency */
+          rgba(202, 197, 254, 0.08)   /* primary-200 more transparent */
+      ) !important;
+      
+      /* Advanced backdrop blur for glass effect */
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      
+      /* Sophisticated border using your light colors */
+      border: 1px solid rgba(214, 224, 255, 0.3) !important; /* light-100 */
+      
+      /* Text color - clean white for contrast */
+      color: white !important;
+      
+      /* Multi-layered shadows for depth */
+      box-shadow: 
+          0 8px 32px rgba(2, 4, 8, 0.4),           /* dark-100 shadow */
+          0 2px 12px rgba(39, 40, 47, 0.3),        /* dark-200 shadow */
+          inset 0 1px 0 rgba(214, 224, 255, 0.15), /* light-100 inner highlight */
+          0 1px 2px rgba(0, 0, 0, 0.1) !important;
+      
+      /* Smooth modern transitions */
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* Shimmer animation overlay */
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+          transparent, 
+          rgba(214, 224, 255, 0.25),  /* light-100 shimmer */
+          transparent
+      );
+      transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+
+    /* Hover state - enhanced glassmorphic effect */
+    .btn:hover {
+      transform: translateY(-3px) scale(1.02) !important;
+      
+      /* Enhanced glass effect */
+      background: linear-gradient(135deg, 
+          rgba(202, 197, 254, 0.25),  /* More opaque primary-200 */
+          rgba(202, 197, 254, 0.12)   /* Enhanced transparency */
+      ) !important;
+      
+      /* Brighter border on hover */
+      border-color: rgba(214, 224, 255, 0.5) !important;
+      
+      /* Enhanced shadows for floating effect */
+      box-shadow: 
+          0 16px 48px rgba(2, 4, 8, 0.5),          
+          0 4px 16px rgba(39, 40, 47, 0.4),        
+          inset 0 1px 0 rgba(214, 224, 255, 0.25), 
+          0 2px 4px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* Shimmer effect trigger on hover */
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    /* Active state - pressed effect */
+    .btn:active {
+      transform: translateY(-1px) scale(1.01) !important;
+      
+      /* Slightly compressed glass effect */
+      background: linear-gradient(135deg, 
+          rgba(202, 197, 254, 0.2), 
+          rgba(202, 197, 254, 0.1)
+      ) !important;
+      
+      /* Reduced shadow for pressed feeling */
+      box-shadow: 
+          0 4px 16px rgba(2, 4, 8, 0.4),
+          inset 0 2px 4px rgba(39, 40, 47, 0.3) !important;
+    }
+
+    /* Disabled state */
+    .btn:disabled {
+      opacity: 0.5 !important;
+      cursor: not-allowed !important;
+      transform: none !important;
+      
+      /* Muted glass effect */
+      background: linear-gradient(135deg, 
+          rgba(202, 197, 254, 0.08), 
+          rgba(202, 197, 254, 0.04)
+      ) !important;
+      
+      box-shadow: 0 4px 16px rgba(2, 4, 8, 0.2) !important;
+    }
+
+    .btn:disabled:hover {
+      transform: none !important;
+      box-shadow: 0 4px 16px rgba(2, 4, 8, 0.2) !important;
+    }
+
+    /* Ensure text stays above shimmer effect */
+    .btn > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Loading state enhancement */
+    .btn[disabled] {
+      background: linear-gradient(135deg, 
+          rgba(79, 85, 125, 0.15),    /* light-600 for loading */
+          rgba(79, 85, 125, 0.08)
+      ) !important;
     }
   }
 
@@ -298,11 +421,11 @@ html {
 }
 
 @utility dark-gradient {
-  @apply bg-gradient-to-b from-[#1A1C20] to-[#08090D];
+  @apply bg-gradient-to-b from-[#050925] to-[#090723];
 }
 
 @utility border-gradient {
-  @apply bg-gradient-to-b from-[#4B4D4F] to-[#4B4D4F33];
+  @apply bg-gradient-to-b from-[#333333] to-[#353bdb33];
 }
 
 @utility pattern {
@@ -310,11 +433,11 @@ html {
 }
 
 @utility blue-gradient-dark {
-  @apply bg-gradient-to-b from-[#171532] to-[#08090D];
+  @apply bg-gradient-to-b from-[#2a2758] to-[#290965];
 }
 
 @utility blue-gradient {
-  @apply bg-gradient-to-l from-[#FFFFFF] to-[#CAC5FE];
+  @apply bg-gradient-to-l from-[#ffffff] to-[#ffffff];
 }
 
 @utility flex-center {

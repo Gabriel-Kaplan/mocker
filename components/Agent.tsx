@@ -35,6 +35,22 @@ const Agent = ({
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [lastMessage, setLastMessage] = useState<string>("");
 
+  // Function to generate initials from userName
+  const getInitials = (name: string): string => {
+    if (!name) return "U";
+    
+    const words = name.trim().split(/\s+/);
+    
+    if (words.length === 1) {
+      return words[0].charAt(0).toUpperCase();
+    } else if (words.length === 2) {
+      return words[0].charAt(0).toUpperCase() + words[1].charAt(0).toUpperCase();
+    } else {
+      // For more than 2 words, take first and last
+      return words[0].charAt(0).toUpperCase() + words[words.length - 1].charAt(0).toUpperCase();
+    }
+  };
+
   useEffect(() => {
     const onCallStart = () => {
       setCallStatus(CallStatus.ACTIVE);
@@ -152,7 +168,7 @@ const Agent = ({
         <div className="card-interviewer">
           <div className="avatar">
             <Image
-              src="/ai-avatar.png"
+              src="/mockerlogo2.png"
               alt="profile-image"
               width={65}
               height={54}
@@ -160,19 +176,15 @@ const Agent = ({
             />
             {isSpeaking && <span className="animate-speak" />}
           </div>
-          <h3>AI Interviewer</h3>
+          <h3>Miva | AI Interviewer</h3>
         </div>
 
         {/* User Profile Card */}
         <div className="card-border">
           <div className="card-content">
-            <Image
-              src="/user-avatar.png"
-              alt="profile-image"
-              width={539}
-              height={539}
-              className="rounded-full object-cover size-[120px]"
-            />
+            <div className="rounded-full bg-gradient-to-br from-blue-500 to-purple-600 size-[120px] flex items-center justify-center text-white text-4xl font-bold">
+              {getInitials(userName)}
+            </div>
             <h3>{userName}</h3>
           </div>
         </div>

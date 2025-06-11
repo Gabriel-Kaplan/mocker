@@ -27,3 +27,4 @@ export default function RootLayout({
     </html>
   );
 }
+/*Code adapted and inspired by JavaScript Mastery*/ 
